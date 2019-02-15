@@ -34,5 +34,25 @@
   color: orange;
 }
 
+/* header and nav */
+
+.header{
+  background-color: pink;
+}
+
+#logo {
+  width:  250px;
+  height: 150px;
+}
+#headingdata{
+  text-align: center;
+}
+
+
+/* footer css  */
+
+#myfoot {
+  background-color: pink;
+}
 
 

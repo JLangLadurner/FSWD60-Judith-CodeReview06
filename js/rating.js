@@ -16,3 +16,5 @@ function clearClass(){
       x[i].classList.remove('a');
   };
 }
+
+
