@@ -60,6 +60,8 @@ i{
   display: block;
   font-size: 30px;
 }
+
+/* main section  */
 .border{
   border: solid 1px #C9C9E9;
 }
@@ -77,6 +79,8 @@ h5{
 #img{
   margin-top: 5px;
 }
+
+/* let's picture disappear */
 
 @media screen and (max-width: 767px){
  #img{
