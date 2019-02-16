@@ -13,55 +13,57 @@ var __extends = (this && this.__extends) || (function () {
 })();
 // location base for every 'item'
 var What = /** @class */ (function () {
-    function What(a, b, c, d, date) {
+    function What(img, date, a, b, c, town, d) {
         this.img = "";
-        this.img = a;
-        this.cityName = b;
-        this.cityZip = c;
-        this.cityadd = d;
+        this.img = img;
         this.date = date;
+        this.cityName = a;
+        this.cityadd = b;
+        this.cityZip = c;
+        this.town = town;
+        this.link = d;
     }
     What.prototype.render = function () {
-        return "<div class=\"col-md-12\">\n\t\t\t\t<h4> Locations In Vienna</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\"\n\t\t\t\t<div class=\"col-md-4\"\n\t\t\t\t<div class=\"card\" style=\"width:18rem;\">\n\t\t\t\t<img id=\"img\" class=\"card-img-top src=\"" + this.img + "\" alt=\"Card image cap\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"card-body\">\n\t\t\t\t<h5>" + this.cityName + "</h5>\n\t\t\t\t<p>" + this.cityZip + "</p>\n\t\t\t\t<p>" + this.cityadd + "</p>\n\t\t\t\t<p>" + this.date + "</p>\n\t\t\t\t</div>\n\t\t\t\t</div\n\t\t\t\t</div>";
+        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\" style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>\n          \n        </div>";
     };
     return What;
 }());
-var schon = new What("../img/schonbrunn.jpg", "Schönbrunn", "Maxingstrasse 13b", "1130", "16.09.2018");
-var karl = new What("../img/Karlsplatz.jpg", "Karlsplatz", "Karlsplatz 1", "1010", "20.09.2018");
+var schon = new What("img/schonbrunn.jpg", "16.09.2018", "Schönbrunn", "Maxingstrasse 13b", "1130", "Vienna", "https://www.schoenbrunn.at");
+var karl = new What("img/Karlsplatz.jpg", "20.09.2018", "Karlsplatz", "Karlsplatz 1", "1010", "Vienna", "http://karlsplatz.org");
 // extension for restaurants
 var restaurants = /** @class */ (function (_super) {
     __extends(restaurants, _super);
-    function restaurants(a, b, c, d, date, type, tele) {
-        var _this = _super.call(this, a, b, c, d, date) || this;
+    function restaurants(img, date, a, b, c, town, type, tel, d) {
+        var _this = _super.call(this, img, date, a, b, c, town, d) || this;
         _this.type = type;
-        _this.telephonenr = tele;
+        _this.telephonenr = tel;
         return _this;
     }
     restaurants.prototype.render = function () {
-        return "<div class=\"col-md-12\">\n\t\t\t\t<h4> Restaurants I tried</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\"\n\t\t\t\t<div class=\"col-md-4\"\n\t\t\t\t<div class=\"card\" style=\"width:18rem;\">\n\t\t\t\t<img id=\"img\" class=\"card-img-top src=\"" + this.img + "\" alt=\"Card image cap\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"card-body\">\n\t\t\t\t<h5>" + this.cityName + "</h5>\n\t\t\t\t<p>" + this.cityZip + "</p>\n\t\t\t\t<p>" + this.cityadd + "</p>\n\t\t\t\t<p>" + this.date + "</p>\n\t\t\t\t<p>Dining: " + this.type + "</p>\n\t\t\t\t<p>Call them at: " + this.telephonenr + "</p>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t";
+        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\"style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <p>Dining: " + this.type + "</p>\n        <p>call: " + this.telephonenr + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>  \n        </div>";
     };
     ;
     return restaurants;
 }(What));
-var Ital = new restaurants("../img/itlalianRes.jpg", "Best Pizza", "OnSome Street 5", "1240", "20.10.2018", "Italian", "+43(1)5693302");
-var china = new restaurants("../img/chineseRes.jpg", "Lemon Leaf Thai Restaurant", "Kettenbrückengasse 19", "27.10.2018", "1050", "Thai", "+43(1)5812308");
+var Ital = new restaurants("img/itlalianRes.jpg", "09.09.2018", "Danieli", "Himmelpfortgasse 3", "1010", "Vienna", "Italian", "+43(1)5693302", "http://www.danieli.at/");
+var china = new restaurants("img/chineseRes.jpg", "27.10.2018", "Lemon Leaf Thai Restaurant", "Kettenbrückengasse 19", "1050", "Vienna", "Thai", "+43(1)5812308", "http://www.lemonleaf.at/");
 var events = /** @class */ (function (_super) {
     __extends(events, _super);
-    function events(a, b, c, d, date, eventDate, eventTime, Price) {
-        var _this = _super.call(this, a, b, c, d, date) || this;
+    function events(img, date, a, b, c, town, eventDate, eventTime, Price, d) {
+        var _this = _super.call(this, img, date, a, b, c, town, d) || this;
         _this.eventDate = eventDate;
         _this.eventTime = eventTime;
         _this.Price = Price;
         return _this;
     }
     events.prototype.render = function () {
-        return "<div class=\"col-md-12\">\n\t\t\t\t<h4> Upcoming Events</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\"\n\t\t\t\t<div class=\"col-md-4\"\n\t\t\t\t<div class=\"card\" style=\"width:18rem;\">\n\t\t\t\t<img id=\"img\" class=\"card-img-top src=\"" + this.img + "\" alt=\"Card image cap\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"card-body\">\n\t\t\t\t<h5>" + this.cityName + "</h5>\n\t\t\t\t<p>" + this.cityZip + "</p>\n\t\t\t\t<p>" + this.cityadd + "</p>\n\t\t\t\t<p>Created on: " + this.date + "</p>\n\t\t\t\t<p>Happening on: " + this.eventDate + "</p>\n\t\t\t\t<p>Start: " + this.eventTime + "</p>\n\t\t\t\t<p>At only: " + this.Price + "</p>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>";
+        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\"style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <p>Date: " + this.eventDate + "</p>\n        <p>Start: " + this.eventTime + "</p>\n        <p> \u20AC " + this.Price + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>\n        </div>";
     };
     ;
     return events;
 }(What));
-var Kris = new events("../img/Kris.jpg", "Kris Kristofferson", "Wiener Stadthalle, Halle F, Roland Rainer Platz 1", "1150", "22.11.2019", "Fr., 15.11.2019", "20:00", "58,50");
-var lenny = new events("../img/lenny.jpg", "Lenny Kravitz", "Wiener Stadthalle, Halle D, Roland Rainer Platz 1", "1150", "23.12.2019", "Sa., 09.12.2019", "19:30", "47,80");
+var Kris = new events("img/Kris.jpg", "22.11.2019", "Kris Kristofferson", "Wiener Stadthalle, Halle F, Roland Rainer Platz 1", "1150", "Vienna", "Fr., 15.11.2019", "20:00", "58,50", "http://kriskristofferson.com/");
+var lenny = new events("img/lenny.jpg", "23.12.2019", "Lenny Kravitz", "Wiener Stadthalle, Halle D, Roland Rainer Platz 1", "1150", "Vienna", "Sa., 09.12.2019", "19:30", "47,80", "http://www.lennykravitz.com/");
 // function test (obj,i){
 //  document.getElementsByClassName("todo")[i].innerHTML= "div>"+arr[i]+"</p>";
 // }
@@ -71,3 +73,4 @@ for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
     var i = arr_1[_i];
     document.getElementById("demo").innerHTML += i.render();
 }
+// ts for comment section

@@ -14,11 +14,14 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Karla" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="css/style01.css">
 
 </head>
 <body>
-  <div class="container" id="main_content">
+ <div class="container" id="main_content">
    <div class="row header">
     <header>
       <div class="col-lg-2">
@@ -29,145 +32,116 @@
       </div>
     </header>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <!-- Carousel -->
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="img/Opera.jpg" alt="First slide">
-            <!-- Static Header -->
-            <div class="header-text hidden-xs">
-              <div class="col-md-12 text-center">
-                <h2>
-                  <span>Welcome to <strong>My Travelblog</strong></span>
-                </h2>
-                <br>
-                <h3>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                </h3>
-                <br>
-                <div class="">
-                  <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a></div>
-                </div>
-              </div><!-- /header-text -->
-            </div>
-            <div class="item">
-              <img src="img/Belvedere.jpg" alt="Second slide">
-              <!-- Static Header -->
-              <div class="header-text hidden-xs">
-                <div class="col-md-12 text-center">
-                  <h2>
-                    <span>Welcome to LOREM IPSUM</span>
-                  </h2>
-                  <br>
-                  <h3>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                  </h3>
-                  <br>
-                  <div class="">
-                    <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a></div>
-                  </div>
-                </div><!-- /header-text -->
-              </div>
-              <div class="item">
-                <img src="img/viennaNight.jpg" alt="Third slide">
-                <!-- Static Header -->
-                <div class="header-text hidden-xs">
-                  <div class="col-md-12 text-center">
-                    <h2>
-                      <span>Welcome to LOREM IPSUM</span>
-                    </h2>
-                    <br>
-                    <h3>
-                      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                    </h3>
-                    <br>
-                    <div class="">
-                      <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a></div>
-                    </div>
-                  </div><!-- /header-text -->
-                </div>
-              <!-- Controls -->
-              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-            </div><!-- /carousel -->
-          </div>
+  <div class="row">
+    <!-- Carousel -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img id = "slides" src="img/Opera.jpg" alt="First slide">
+          <!-- Static Header -->
+          <div class="header-text hidden-xs">
+          </div><!-- /header-text -->
         </div>
-      </div>
-
-
-      <!-- nav bar start -->
-
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="#">Logo</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-          </div>
+        <div class="item">
+          <img id = "slides" src="img/Belvedere.jpg" alt="Second slide">
         </div>
-      </nav>
-
-      <!-- nav end  -->
-
-      <div class="container">
-
-       <div id="demo" class="row">
-       </div>
-
-
-
-
-
-       <div class="row">
-        <div class="col-lg-6 stars">
-          <div id='rating'> Leave us a rating <br>
-            <span class="glyphicon glyphicon-star star" aria-hidden="true" value="1"></span>
-            <span class="glyphicon glyphicon-star star" aria-hidden="true" value="2"></span>
-            <span class="glyphicon glyphicon-star star" aria-hidden="true" value="3"></span>
-            <span class="glyphicon glyphicon-star star" aria-hidden="true" value="4"></span>
-            <span class="glyphicon glyphicon-star star" aria-hidden="true" value="5"></span>
-          </div>
-        </div> 
-      </div> 
+        <div class="item">
+          <img id = "slides" src="img/viennaNight.jpg" alt="Third slide">
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div><!-- /carousel -->
     </div>
-    <!-- end main content -->
+  </div>
+  <!-- nav bar start -->
+  <div class="row">
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="img/fresh_logo_color.png" width="70px" height="30px" alt="logo"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Sorted ASC</a></li>
+          <li><a href="#">Sorted DESC</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- nav end  -->
+  <!-- main content box -->
+
+  <div id="demo" class="row text-center">
+  </div>
+     
+<!-- main box end -->
+<!-- form start -->
+   
+  <div class="col-lg-4 col-md-offset-4 col-sm-12 col-xs-12 gap">
+    <h5>We would love to hear from you <i class="glyphicon glyphicon-heart"></i></h5>
+    <div class="form-group">
+      <label for="usr" >Name:</label>
+      <input text="name" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <button id="btn" type="submit" class="btn btn-default">Submit</button>
+    <div id="output" class="col-lg-12">
+    </div>
+  </div>
+
+  <!-- form end -->
+  
+  <div class="row gap">
+    <div class="col-lg-6 col-lg-offset-10 stars">
+      <div id='rating'> Please rate my site <br>
+        <span class="glyphicon glyphicon-star star" aria-hidden="true" value="1"></span>
+        <span class="glyphicon glyphicon-star star" aria-hidden="true" value="2"></span>
+        <span class="glyphicon glyphicon-star star" aria-hidden="true" value="3"></span>
+        <span class="glyphicon glyphicon-star star" aria-hidden="true" value="4"></span>
+        <span class="glyphicon glyphicon-star star" aria-hidden="true" value="5"></span>
+      </div>
+    </div> 
+  </div> 
+  <div id="output" class="col-md-4">
+  </div>
+</div>
+<!-- end main content -->
 
 
-    <!-- footer start  -->
+<!-- footer start  -->
 
-    <footer id="myfoot" class="container-fluid text-center">
-      <p>Footer Text</p>
-    </footer>
-    <script src="js/data.js" type="text/javascript" charset="utf-8" async defer></script>
+<footer id="myfoot" class="container text-center">
+  <img src="img/codefactory-vienna-logo.png" width="150px" height="50px" alt="codefactory">
+  <p>CodeReview 06 </p>
+  <p>&copy; Judith Lang-Ladurner  </p>
+</footer>
+<script src="js/data.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/datav01.js" type="text/javascript" charset="utf-8" async defer></script>
 
-    <script src="js/rating.js" type="text/javascript" charset="utf-8" async defer></script>
-  </body>
-  </html>
+<script src="js/rating.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

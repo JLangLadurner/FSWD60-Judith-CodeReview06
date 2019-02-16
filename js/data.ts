@@ -2,116 +2,113 @@
 // location base for every 'item'
 class What {
 	img = "";
-	cityName: " ";
-	cityadd: "string";
+	cityName: "";
+	cityadd: "";
 	cityZip: " ";
+	town:"";
+	link:"";
 	date: " ";
 	
 
-	constructor (a,b,c,d,date){
-		this.img = a;
-		this.cityName = b;
-		this.cityZip = c;
-		this.cityadd = d;
+	constructor (img,date,a,b,c,town,d){
+		this.img = img;
 		this.date = date;
+		this.cityName = a;
+		this.cityadd = b;
+		this.cityZip = c;
+		this.town = town;
+		this.link=d;
+		
 
 	}
 	render(){
-		return `<div class="col-md-12">
-				<h4> Locations In Vienna</h4>
-				</div>
-				<div class="row"
-				<div class="col-md-4"
-				<div class="card" style="width:18rem;">
-				<img id="img" class="card-img-top src="${this.img}" alt="Card image cap">
-				</div>
-				<div class="card-body">
-				<h5>${this.cityName}</h5>
-				<p>${this.cityZip}</p>
-				<p>${this.cityadd}</p>
-				<p>${this.date}</p>
-				</div>
-				</div
-				</div>`
+		return `<div  class="col-lg-6 col-md-6 col-xs-12 mp-2 border top">
+        <div class="col-lg-3" style="width: 24rem;">
+        <img id="img" class="card-img-top" src = "${this.img}" width="250px" height="170px" alt="Card image cap">
+        <hr>
+          <small class="text-muted">created: ${this.date}</small>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+        <h5>${this.cityName}</h5>
+        <p>${this.cityadd}, ${this.cityZip} ${this.town}</p>
+        <a href="${this.link}">
+        <span class="glyphicon glyphicon-globe"></span></a>
+        </div>
+          
+        </div>`
 }
 }
-var schon = new What ("../img/schonbrunn.jpg","Schönbrunn","Maxingstrasse 13b","1130","16.09.2018");
-var karl = new What ("../img/Karlsplatz.jpg","Karlsplatz","Karlsplatz 1","1010","20.09.2018");
+var schon = new What ("img/schonbrunn.jpg","16.09.2018","Schönbrunn","Maxingstrasse 13b","1130","Vienna","https://www.schoenbrunn.at");
+var karl = new What ("img/Karlsplatz.jpg","20.09.2018","Karlsplatz","Karlsplatz 1","1010","Vienna","http://karlsplatz.org");
 // extension for restaurants
 class restaurants extends What {
 	type;
 	telephonenr;
 
-	constructor (a,b,c,d,date,type,tele){
-		super(a,b,c,d,date);
+	constructor (img,date,a,b,c,town,type,tel,d){
+		super(img,date,a,b,c,town,d);
 		this.type = type;
-		this.telephonenr = tele;
+		this.telephonenr = tel;
 	}
 	render(){
-		return `<div class="col-md-12">
-				<h4> Restaurants I tried</h4>
-				</div>
-				<div class="row"
-				<div class="col-md-4"
-				<div class="card" style="width:18rem;">
-				<img id="img" class="card-img-top src="${this.img}" alt="Card image cap">
-				</div>
-				<div class="card-body">
-				<h5>${this.cityName}</h5>
-				<p>${this.cityZip}</p>
-				<p>${this.cityadd}</p>
-				<p>${this.date}</p>
-				<p>Dining: ${this.type}</p>
-				<p>Call them at: ${this.telephonenr}</p>
-				</div>
-				</div>
-				</div>
-				`
+		return `<div  class="col-lg-6 col-md-6 col-xs-12 mp-2 border top">
+        <div class="col-lg-3"style="width: 24rem;">
+        <img id="img" class="card-img-top" src = "${this.img}" width="250px" height="170px" alt="Card image cap">
+        <hr>
+          <small class="text-muted">created: ${this.date}</small>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+        <h5>${this.cityName}</h5>
+        <p>${this.cityadd}, ${this.cityZip} ${this.town}</p>
+        <p>Dining: ${this.type}</p>
+        <p>call: ${this.telephonenr}</p>
+        <a href="${this.link}">
+        <span class="glyphicon glyphicon-globe"></span></a>
+        </div>  
+        </div>`
 
 		
 	};
 
 }
-var Ital = new restaurants ("../img/itlalianRes.jpg","Best Pizza","OnSome Street 5","1240","20.10.2018", "Italian", "+43(1)5693302");
-var china = new restaurants ("../img/chineseRes.jpg","Lemon Leaf Thai Restaurant","Kettenbrückengasse 19","27.10.2018","1050", "Thai", "+43(1)5812308");
+var Ital = new restaurants ("img/itlalianRes.jpg","09.09.2018","Danieli","Himmelpfortgasse 3","1010", "Vienna", "Italian", "+43(1)5693302", "http://www.danieli.at/" );
+var china = new restaurants ("img/chineseRes.jpg","27.10.2018","Lemon Leaf Thai Restaurant","Kettenbrückengasse 19","1050", "Vienna","Thai","+43(1)5812308","http://www.lemonleaf.at/");
 
 class events extends What {
 	eventDate;
 	eventTime;
 	Price;
 
-	constructor (a,b,c,d,date,eventDate,eventTime,Price){
-		super(a,b,c,d,date);
+	constructor (img,date,a,b,c,town,eventDate,eventTime,Price,d){
+		super(img,date,a,b,c,town,d);
 		this.eventDate = eventDate;
 		this.eventTime = eventTime;
 		this.Price = Price;
 	}
 	render(){
-		return `<div class="col-md-12">
-				<h4> Upcoming Events</h4>
-				</div>
-				<div class="row"
-				<div class="col-md-4"
-				<div class="card" style="width:18rem;">
-				<img id="img" class="card-img-top src="${this.img}" alt="Card image cap">
-				</div>
-				<div class="card-body">
-				<h5>${this.cityName}</h5>
-				<p>${this.cityZip}</p>
-				<p>${this.cityadd}</p>
-				<p>Created on: ${this.date}</p>
-				<p>Happening on: ${this.eventDate}</p>
-				<p>Start: ${this.eventTime}</p>
-				<p>At only: ${this.Price}</p>
-				</div>
-				</div>
-				</div>`
+		return `<div  class="col-lg-6 col-md-6 col-xs-12 mp-2 border top">
+        <div class="col-lg-3"style="width: 24rem;">
+        <img id="img" class="card-img-top" src = "${this.img}" width="250px" height="170px" alt="Card image cap">
+        <hr>
+          <small class="text-muted">created: ${this.date}</small>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+        <h5>${this.cityName}</h5>
+        <p>${this.cityadd}, ${this.cityZip} ${this.town}</p>
+        <p>Date: ${this.eventDate}</p>
+        <p>Start: ${this.eventTime}</p>
+        <p> € ${this.Price}</p>
+        <a href="${this.link}">
+        <span class="glyphicon glyphicon-globe"></span></a>
+        </div>
+        </div>`
+
 	};
 
 }
 
-var Kris = new events ("../img/Kris.jpg","Kris Kristofferson","Wiener Stadthalle, Halle F, Roland Rainer Platz 1","1150","22.11.2019", "Fr., 15.11.2019", "20:00","58,50");
-var lenny = new events ("../img/lenny.jpg","Lenny Kravitz","Wiener Stadthalle, Halle D, Roland Rainer Platz 1","1150","23.12.2019", "Sa., 09.12.2019", "19:30","47,80");
+var Kris = new events ("img/Kris.jpg","22.11.2019","Kris Kristofferson","Wiener Stadthalle, Halle F, Roland Rainer Platz 1","1150","Vienna", "Fr., 15.11.2019", "20:00","58,50","http://kriskristofferson.com/");
+var lenny = new events ("img/lenny.jpg","23.12.2019","Lenny Kravitz","Wiener Stadthalle, Halle D, Roland Rainer Platz 1","1150","Vienna", "Sa., 09.12.2019", "19:30","47,80","http://www.lennykravitz.com/");
 
 // function test (obj,i){
 //  document.getElementsByClassName("todo")[i].innerHTML= "div>"+arr[i]+"</p>";
@@ -124,6 +121,9 @@ arr =[schon,karl,Ital,china,Kris,lenny];
 for (let i of arr) {
 	document.getElementById("demo").innerHTML +=i.render();
 	}
+
+// ts for comment section
+
 
 
 
