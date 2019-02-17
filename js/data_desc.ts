@@ -26,7 +26,7 @@ class What {
         <div class="col-lg-3" style="width: 24rem;">
         <img id="img" class="card-img-top" src = "${this.img}" width="250px" height="170px" alt="Card image cap">
         <hr>
-          <small class="text-muted">created: ${this.date}</small>
+          <small id="${this.date}" class="text-muted">created: ${this.date}</small>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
         <h5>${this.cityName}</h5>
@@ -55,7 +55,7 @@ class restaurants extends What {
         <div class="col-lg-3"style="width: 24rem;">
         <img id="img" class="card-img-top" src = "${this.img}" width="250px" height="170px" alt="Card image cap">
         <hr>
-          <small class="text-muted">created: ${this.date}</small>
+          <small id="${this.date}" class="text-muted">created: ${this.date}</small>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
         <h5>${this.cityName}</h5>
@@ -90,7 +90,7 @@ class events extends What {
         <div class="col-lg-3"style="width: 24rem;">
         <img id="img" class="card-img-top" src = "${this.img}" width="250px" height="170px" alt="Card image cap">
         <hr>
-          <small class="text-muted">created: ${this.date}</small>
+          <small id="${this.date}" class="text-muted">created: ${this.date}</small>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
         <h5>${this.cityName}</h5>
@@ -122,7 +122,31 @@ for (let i of arr) {
 	document.getElementById("demo").innerHTML +=i.render();
 	}
 
-// ts for comment section
+	// 'g' means global replace is needed. This means that your replace will replace all copies of the matched string with the replacement
+	// provided
+
+// function descending(a,b){
+// 	const A = a.date;
+// 	let test1 = A.replace(/\./g, '').replace(/\./g,'').substring(2,8);
+// 	console.log(test1);
+// 	const B = b.date;
+// 	let test2 = B.replace(/\./g, '').replace(/\./g,'').substring(2,8);
+// 	let comparison = -1;
+// 	if(+test1 >test2) {
+// 		comparison = -1;
+// 	}
+
+// 	return comparison;
+// }
+
+// $("#demo").text("");
+// 	var sorted=arr.sort(descending);
+// 	for(let i = 0; i<sorted.length ; i++){
+// 		document.getElementById("demo").innerHTML +=sorted[i].render();
+// 	}
+
+
+
 
 
 

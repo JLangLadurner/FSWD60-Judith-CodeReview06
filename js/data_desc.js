@@ -24,7 +24,7 @@ var What = /** @class */ (function () {
         this.link = d;
     }
     What.prototype.render = function () {
-        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\" style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>\n          \n        </div>";
+        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\" style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small id=\"" + this.date + "\" class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>\n          \n        </div>";
     };
     return What;
 }());
@@ -40,7 +40,7 @@ var restaurants = /** @class */ (function (_super) {
         return _this;
     }
     restaurants.prototype.render = function () {
-        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\"style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <p>Dining: " + this.type + "</p>\n        <p>call: " + this.telephonenr + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>  \n        </div>";
+        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\"style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small id=\"" + this.date + "\" class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <p>Dining: " + this.type + "</p>\n        <p>call: " + this.telephonenr + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>  \n        </div>";
     };
     ;
     return restaurants;
@@ -57,7 +57,7 @@ var events = /** @class */ (function (_super) {
         return _this;
     }
     events.prototype.render = function () {
-        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\"style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <p>Date: " + this.eventDate + "</p>\n        <p>Start: " + this.eventTime + "</p>\n        <p> \u20AC " + this.Price + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>\n        </div>";
+        return "<div  class=\"col-lg-6 col-md-6 col-xs-12 mp-2 border top\">\n        <div class=\"col-lg-3\"style=\"width: 24rem;\">\n        <img id=\"img\" class=\"card-img-top\" src = \"" + this.img + "\" width=\"250px\" height=\"170px\" alt=\"Card image cap\">\n        <hr>\n          <small id=\"" + this.date + "\" class=\"text-muted\">created: " + this.date + "</small>\n        </div>\n        <div class=\"col-lg-5 col-lg-offset-1\">\n        <h5>" + this.cityName + "</h5>\n        <p>" + this.cityadd + ", " + this.cityZip + " " + this.town + "</p>\n        <p>Date: " + this.eventDate + "</p>\n        <p>Start: " + this.eventTime + "</p>\n        <p> \u20AC " + this.Price + "</p>\n        <a href=\"" + this.link + "\">\n        <span class=\"glyphicon glyphicon-globe\"></span></a>\n        </div>\n        </div>";
     };
     ;
     return events;
@@ -73,4 +73,22 @@ for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
     var i = arr_1[_i];
     document.getElementById("demo").innerHTML += i.render();
 }
-// ts for comment section
+// 'g' means global replace is needed. This means that your replace will replace all copies of the matched string with the replacement
+// provided
+// function descending(a,b){
+// 	const A = a.date;
+// 	let test1 = A.replace(/\./g, '').replace(/\./g,'').substring(2,8);
+// 	console.log(test1);
+// 	const B = b.date;
+// 	let test2 = B.replace(/\./g, '').replace(/\./g,'').substring(2,8);
+// 	let comparison = -1;
+// 	if(+test1 >test2) {
+// 		comparison = -1;
+// 	}
+// 	return comparison;
+// }
+// $("#demo").text("");
+// 	var sorted=arr.sort(descending);
+// 	for(let i = 0; i<sorted.length ; i++){
+// 		document.getElementById("demo").innerHTML +=sorted[i].render();
+// 	}

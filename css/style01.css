@@ -79,6 +79,9 @@ h5{
 #img{
   margin-top: 5px;
 }
+small>[id]{
+  display: none;
+}
 
 /* let's picture disappear */
 
